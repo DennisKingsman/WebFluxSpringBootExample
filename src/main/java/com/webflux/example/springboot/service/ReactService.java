@@ -1,9 +1,13 @@
 package com.webflux.example.springboot.service;
 
-public interface ReactService {
-    
-    String getBlockedString();
+import reactor.core.publisher.Mono;
 
-    String forConcat();
+public interface ReactService {
+
+    String getBlocked();
+
+    Mono<String> forConcatNonBlocked();
+
+    String getSimple();
 
 }
