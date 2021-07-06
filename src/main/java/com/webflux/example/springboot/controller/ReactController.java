@@ -70,7 +70,8 @@ public class ReactController {
         Mono<String> monoResult = webClient.get()
                 .uri("/react")
                 .retrieve()
-                .bodyToMono(String.class);
+                .bodyToMono(String.class)
+                .onErrorReturn("Error"); //simple Error Handler
         //do smth with monoResult
         return monoResult;
     }
